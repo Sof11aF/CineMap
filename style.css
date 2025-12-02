@@ -1,0 +1,282 @@
+/* ========== BASE STYLES ========== */
+body, html { 
+  margin: 0; 
+  padding: 0; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden;
+}
+
+#map { 
+  width: 100vw; 
+  height: 100vh; 
+  position: relative;
+}
+
+/* ========== LEAFLET POPUP STYLES ========== */
+
+/* Popup wrapper (colored box) */
+.leaflet-popup-content-wrapper {
+  background: #f3e3e7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(144, 102, 166, 0.2);
+  border: none;
+  font-size: 14px !important;
+}
+
+/* Popup tip (arrow pointing to marker) */
+.leaflet-popup-tip {
+  background: #f3e3e7;
+  border: none;
+}
+
+/* Text content inside popup */
+.leaflet-popup-content {
+  color: #5a4a5c;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 12px;
+  font-size: 14px !important;
+}
+
+/* Heading styling */
+.leaflet-popup-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px !important;
+  font-weight: 600;
+  color: #5a4a5c;
+}
+
+/* Paragraph styling */
+.leaflet-popup-content p {
+  margin: 0 0 10px 0;
+  font-size: 14px !important;
+  color: #7a6a7c;
+  line-height: 1.4;
+}
+
+/* Link styling */
+.leaflet-popup-content a {
+  color: #9066a6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.leaflet-popup-content a:hover {
+  color: #7a4a96;
+  text-decoration: underline;
+}
+
+/* Close button (X) */
+.leaflet-popup-close-button {
+  color: #9066a6;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #7a4a96;
+}
+
+/* Marker icon fix */
+.leaflet-marker-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ========== HAMBURGER MENU STYLES ========== */
+
+.hamburger-menu {
+  position: fixed; 
+  top: 25px; 
+  right: 25px; 
+  width: 40px; 
+  height: 40px; 
+  cursor: pointer;
+  background: none; 
+  border-radius: 0; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  z-index: 1001;
+  padding: 0;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.hamburger-menu:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-menu:active {
+  transform: scale(0.95);
+}
+
+.hamburger-bar { 
+  background: #9066a6; 
+  height: 6px; 
+  margin: 4px 0; 
+  border-radius: 3px; 
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* ========== EMERGING MENU STYLES ========== */
+
+#emerging-menu {
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+  background: #f3e3e7; 
+  padding: 1.2em; 
+  border-radius: 0;
+  z-index: 1000; 
+  box-shadow: -4px 0 18px rgba(144, 102, 166, 0.15);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#emerging-menu.active {
+  display: block;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Smooth slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Menu content styling */
+#emerging-menu h2 {
+  color: #5a4a5c;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  font-size: 20px;
+}
+
+#emerging-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#emerging-menu li {
+  padding: 0.8em;
+  margin-bottom: 0.5em;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #5a4a5c;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#emerging-menu li:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(-4px);
+}
+
+.filter-tabs {
+  display: flex; margin-bottom: 1em; gap: 0.5em;
+}
+.tab {
+  flex: 1; padding: 0.8em; background: rgba(255,255,255,0.3);
+  border-radius: 6px; text-align: center; cursor: pointer;
+  font-weight: 500; transition: all 0.2s;
+}
+.tab.active { background: #9066a6; color: white; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  #emerging-menu {
+    width: 35vw;
+  }
+  
+  .hamburger-menu {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  #emerging-menu {
+    width: 50vw;
+    padding: 1em;
+  }
+  
+  .hamburger-menu {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .hamburger-bar {
+    height: 5px;
+    margin: 3px 0;
+  }
+  
+  .leaflet-popup-content h3 {
+    font-size: 16px !important;
+  }
+  
+  .leaflet-popup-content {
+    padding: 10px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  #emerging-menu {
+    width: 70vw;
+  }
+  
+  .hamburger-menu {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ========== SCROLLBAR STYLING (optional) ========== */
+
+#emerging-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+#emerging-menu::-webkit-scrollbar-track {
+  background: rgba(144, 102, 166, 0.1);
+}
+
+#emerging-menu::-webkit-scrollbar-thumb {
+  background: rgba(144, 102, 166, 0.3);
+  border-radius: 4px;
+}
+
+#emerging-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 102, 166, 0.5);
+}
+
+/* Firefox scrollbar */
+#emerging-menu {
+  scrollbar-color: rgba(144, 102, 166, 0.3) rgba(144, 102, 166, 0.1);
+  scrollbar-width: thin;
+}
