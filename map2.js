@@ -122,7 +122,11 @@ function createCinemaMarker(cinema, icon, dayFilter = 'all') {
         cinema.showtimes[day].forEach(m => {
           showtimesHtml += `<li><strong>${m.movie}</strong> — ${m.time}</li>`;
         });
-        showtimesHtml += `</ul></div>`;
+        showtimesHtml += `
+    <li>
+      <strong>${m.movie}</strong>
+      <span class="time-pill">${m.time}</span>
+    </li>`;
       }
     });
     
@@ -257,3 +261,4 @@ function closeMenu() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initMap);
+
