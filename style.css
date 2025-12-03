@@ -280,3 +280,27 @@ body, html {
   scrollbar-color: rgba(144, 102, 166, 0.3) rgba(144, 102, 166, 0.1);
   scrollbar-width: thin;
 }
+
+.showtimes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  margin: 4px 0;
+}
+
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #d4b6e3;
+  background: #f8f1fb;
+  color: #5a4a5c;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
